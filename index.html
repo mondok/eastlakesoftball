@@ -24,6 +24,22 @@
 		"name": "eastlakesoftball",
 		"logo": "images/elsb.jpeg"
 }</script>
+<script type="application/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    // Select all rows in the table
+    const rows = document.querySelectorAll('tr');
+
+    rows.forEach(row => {
+        // Select the last cell (location) in the row
+        const locationCell = row.querySelector('td:last-child');
+
+        if (locationCell && locationCell.textContent.includes('East Lake High School')) {
+            // Apply bold styling
+            locationCell.style.fontWeight = 'bold';
+        }
+    });
+});
+</script>
   <meta name="theme-color" content="#478ac9">
   <meta property="og:title" content="Home">
   <meta property="og:description" content="">
@@ -170,17 +186,17 @@
                 class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
                 Canterbury</td>
             </tr>
-            <tr style="height: 75px;">
+            <tr style="height: 75px; background-color: pink;">
               <td
                 class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
                 February 19</td>
               <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
                 7:00 PM</td>
               <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
+                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7" style="background-color: pink;">
                 Sickles High School</td>
               <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
+                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8" style="background-color: pink;">
                 East Lake High School</td>
             </tr>
             <tr style="height: 75px;">
