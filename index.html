@@ -41,6 +41,30 @@
             locationCell.style.fontWeight = 'bold';
         }
     });
+
+    rows.forEach(row => {
+        // Select the first cell (date column) in the row
+        const dateCell = row.querySelector('td:first-child');
+
+        if (dateCell) {
+            // Extract the text content of the date cell
+            const dateText = dateCell.textContent.trim();
+
+            // Try to parse the date using a recognizable format
+            const match = dateText.match(/([A-Za-z]+)\s(\d+)(?:th|st|nd|rd)?/); // Match month and day
+            if (match) {
+                const [_, month, day] = match;
+                const dateString = `${month} ${day}, ${new Date().getFullYear()}`; // Add the current year
+                const date = new Date(dateString);
+
+                // If the date is valid, append the day of the week
+                if (!isNaN(date.getTime())) {
+                    const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
+                    dateCell.textContent = `${dateText} (${dayOfWeek})`;
+                }
+            }
+        }
+    });    
 });
 </script>
   <meta name="theme-color" content="#478ac9">
@@ -128,7 +152,7 @@
                 class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
                 January 20th</td>
               <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                8:00-10 AM</td>
+                8:00-10:00 AM</td>
               <td
                 class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
                 1st Day of Tryouts (Players)</td>
