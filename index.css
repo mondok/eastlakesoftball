@@ -1,16 +1,143 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 863px;
+  min-height: 302px;
 }
 
 .u-section-1 .u-text-1 {
-  margin: 49px auto 0;
+  margin-bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .u-section-1 .u-text-2 {
-  margin: 18px auto 60px;
+  margin: 20px auto 36px;
 }
 
 .u-section-1 .u-btn-1 {
   background-image: none;
   padding: 0;
+}
+
+.u-section-1 .u-btn-2 {
+  background-image: none;
+  padding: 0;
+}
+
+.u-section-1 .u-btn-3 {
+  background-image: none;
+  padding: 0;
+}
+
+.u-section-1 .u-btn-4 {
+  background-image: none;
+  padding: 0;
+}
+
+.u-section-1 .u-btn-5 {
+  background-image: none;
+  padding: 0;
+}
+
+.u-section-1 .u-btn-6 {
+  background-image: none;
+  padding: 0;
+}.u-section-2 .u-sheet-1 {
+  min-height: 745px;
+}
+
+.u-section-2 .u-text-1 {
+  --animation-custom_in-translate_x: 0px;
+  --animation-custom_in-translate_y: 0px;
+  --animation-custom_in-opacity: 0;
+  --animation-custom_in-rotate: 0deg;
+  --animation-custom_in-scale: 0.3;
+  margin: 12px auto 0;
+}
+
+.u-section-2 .u-table-1 {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.u-block-568e-4 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.u-block-568e-93 {
+  height: 46px;
+}
+
+.u-block-568e-94 {
+  background-image: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.u-block-568e-96 {
+  background-image: none;
+  font-weight: 700;
+}
+
+.u-block-568e-147 {
+  background-image: none;
+  font-weight: 700;
+}
+
+.u-block-568e-159 {
+  background-image: none;
+  font-weight: 700;
+}
+
+.u-section-2 .u-table-cell-1 {
+  background-image: none;
+  text-transform: none;
+  font-weight: 700;
+}
+
+.u-section-2 .u-table-cell-2 {
+  font-weight: 700;
+  background-image: none;
+}
+
+.u-section-2 .u-table-cell-3 {
+  font-weight: 700;
+  background-image: none;
+}
+
+.u-section-2 .u-table-cell-4 {
+  font-weight: 700;
+  background-image: none;
+}
+
+.u-section-2 .u-table-cell-5 {
+  font-weight: 700;
+  border-style: dotted;
+}
+
+.u-section-2 .u-table-cell-6 {
+  border-style: dotted;
+  font-weight: 400;
+}
+
+.u-section-2 .u-table-cell-7 {
+  background-image: none;
+  border-style: dotted;
+  font-weight: 400;
+}
+
+.u-section-2 .u-table-cell-8 {
+  background-image: none;
+  border-style: dotted;
+  font-weight: 400;
+}
+
+.u-block-568e-35 {
+  background-image: none;
+}
+
+@media (max-width: 767px) {
+  .u-section-2 .u-text-1 {
+    margin-top: 60px;
+  }
 }
