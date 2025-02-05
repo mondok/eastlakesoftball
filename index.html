@@ -29,6 +29,58 @@
 }</script>
 <script type="application/javascript">
   document.addEventListener('DOMContentLoaded', () => {
+    // Table data stored in JavaScript
+    const scheduleData = [
+      { date: 'January 20th', time: '8:00-10:00 AM', event: '1st Day of Tryouts (Players)', location: 'East Lake High School' },
+      { date: 'January 21st', time: '4:30-6:30 PM', event: '2nd Day of Tryouts (Players)', location: 'East Lake High School' },
+      { date: 'January 22nd', time: '6:30 PM', event: 'Meet the Players (Parents & Players)', location: 'East Lake High School' },
+      { date: 'January 25th', time: 'Time Pending', event: 'Team Pictures, Varsity Retreat, and potential field prep/clean-up', location: 'East Lake High School' },
+      { date: 'February 9th', time: '8am-4pm', event: 'Tag Day', location: 'Brooker Creek Publix' },
+      { date: 'February 13th', time: 'TBA', event: 'Pre-Season', location: 'Canterbury' },
+      { date: 'February 19', time: '7:00 PM', event: 'Sickles High School', location: 'East Lake High School' },
+      { date: 'February 26', time: '7:00 PM', event: 'Boca Ciega High School', location: 'East Lake High School' },
+      { date: 'February 28', time: 'TBA', event: '<a href="files/MAIST_2025.pdf">Montverde Tournament (Click for Bracket)</a>', location: 'Montverde' },
+      { date: 'March 4', time: '7:00 PM', event: 'Largo High School', location: 'East Lake High School' },
+      { date: 'March 6', time: '7:00 PM', event: 'Countryside High School', location: 'Countryside' },
+      { date: 'March 7', time: '6:00 PM', event: 'Berkley Prep', location: 'East Lake High School' },
+      { date: 'March 10', time: '6:00 PM', event: 'Canterbury High School', location: 'Canterbury' },
+      { date: 'March 11', time: '6:00 PM', event: 'River Ridge High School', location: 'River Ridge' },
+      { date: 'March 12', time: '7:00 PM', event: 'Northeast High School', location: 'Northeast' },
+      { date: 'March 27', time: '7:00 PM', event: 'Clearwater High School', location: 'Clearwater' },
+      { date: 'March 29', time: '12:00/2:30 PM', event: 'Cherry Hill (NJ), L. Brantley', location: 'Clermont' },
+      { date: 'April 1', time: '5:00 PM', event: 'Palm Harbor High School', location: 'Palm Harbor' },
+      { date: 'April 2', time: '7:00 PM', event: 'St. Pete High School', location: 'East Lake High School' },
+      { date: 'April 8', time: '7:00 PM', event: 'Tarpon Springs High School', location: 'East Lake High School' },
+      { date: 'April 9', time: '7:00 PM', event: 'Dunedin High School', location: 'East Lake High School' },
+      { date: 'April 10', time: '7:00 PM', event: 'Newsome High School', location: 'East Lake High School' },
+      { date: 'April 15', time: '6:00 PM', event: 'Manatee High School', location: 'G.T. Bray Park' },
+      { date: 'April 17', time: '7:00 PM', event: 'Seminole High School', location: 'East Lake High School' },
+      { date: 'April 22', time: '7:00 PM', event: 'Hollins High School', location: 'East Lake High School' },
+      { date: 'April 24', time: 'TBA', event: 'PCAC Championship', location: 'South' },
+      { date: 'April 25', time: '6:00 PM', event: 'Berkley Preparatory', location: 'Berkley Prep' },
+      { date: 'April 28-May 2', time: 'TBA', event: 'TBA', location: 'TBA' }
+    ];
+
+    // Function to render the table
+    const renderTable = () => {
+      const tableBody = document.querySelector('.u-table-body');
+      scheduleData.forEach(item => {
+        const row = document.createElement('tr');
+        row.style.height = '75px';
+        const homeEmoji = item.location === 'East Lake High School' ? '🏠 ' : '';
+        row.innerHTML = `
+          <td class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell" style="font-weight: bold;">${homeEmoji}${item.date}</td>
+          <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${item.time}</td>
+          <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${item.event}</td>
+          <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${item.location}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    };
+
+    // Call the function to render the table
+    renderTable();
+
     // Select all rows in the table
     const rows = document.querySelectorAll('tr');
 
@@ -73,19 +125,82 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://eastlakesoftball.com/elsb_tile.png">
   <meta data-intl-tel-input-cdn-path="intlTelInput/">
+  <style>
+    /* Add this CSS to style alternating table rows */
+    .u-table-body tr:nth-child(odd) {
+      background-color: #f0f8ff; /* Very light blue */
+    }
+
+    /* Style for the Tag Day Shifts table */
+    .tag-day-table tbody tr:nth-child(odd) {
+      background-color: #f0f8ff; /* Very light blue */
+    }
+  </style>
 </head>
 
 <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false"
   class="u-body u-stick-footer u-xl-mode" data-lang="en">
-  <header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-484f"><div class="u-clearfix u-sheet u-sheet-1">
-    <a href="/" class="u-image u-logo u-image-1" data-image-width="203" data-image-height="172">
-      <img src="images/elsb.png" class="u-logo-image u-logo-image-1">
-    </a>
-    <h1 class="u-text u-text-default u-text-1">East Lake Softball Boosters</h1>
-  </div></header>
+  <header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-484f">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <a href="/" class="u-image u-logo u-image-1" data-image-width="203" data-image-height="172">
+        <img src="images/elsb.png" class="u-logo-image u-logo-image-1">
+      </a>
+      <h1 class="u-text u-text-default u-text-1">East Lake Softball Boosters</h1>
+    </div>
+  </header>
+
+  <!-- New Updates Section -->
+  <section class="u-clearfix u-container-align-center u-section-1" style="background-color: #d4edda; padding: 20px;">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <h2 class="u-align-center u-text u-text-default u-text-1">Updates</h2>
+      <ul class="u-align-left u-text u-text-default u-text-2">
+        <li>2/9: Superbowl Squares Purchase Ends</li>
+        <li>2/14: <a href="files/strikeoutcancer.pdf">Strikeout Cancer Luminary forms</a> are due. You can turn in forms/money to a board member, or put in an envelope and have your player drop in the booster correspondence bin located in the club house.</li>
+        <li>Monteverde: If you have not yet, don't forget to make your hotel reservations for the Montverde tournament. The players hotel rooms are booked for the night of the 28th.</li>
+        <li>Pre-Game Meals: Thank you for signing up, we still need to fill 4 April games, link to sign-up is <a href="https://www.signupgenius.com/go/4090D45A8AC2EA7FD0-54461067-pregame#/">here</a>.</li>
+      </ul>
+      
+      <!-- New Tag Day Shifts Table -->
+      <h3 class="u-align-center u-text u-text-default u-text-1">2/9 Tag Day Shifts</h3>
+      <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <table class="u-table-entity tag-day-table" style="width: 70%; table-layout: fixed;">
+          <thead>
+            <tr>
+              <th style="text-align: left; width: 20%;">Shift</th>
+              <th style="text-align: left; width: 20%;">Participants</th>
+              <th style="text-align: left; width: 20%;">Parent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left;">8a-10a</td>
+              <td style="text-align: left;">Frankie, Emma, Zamira, Lucy</td>
+              <td style="text-align: left;">Tanya Parkes</td>
+            </tr>
+            <tr>
+              <td style="text-align: left;">10a-12p</td>
+              <td style="text-align: left;">Khloe, Morgan, Abbey</td>
+              <td style="text-align: left;">Celeste Johnson</td>
+            </tr>
+            <tr>
+              <td style="text-align: left;">12p-2p</td>
+              <td style="text-align: left;">Gianna, Izzy, Taylor</td>
+              <td style="text-align: left;">Danielle Magro</td>
+            </tr>
+            <tr>
+              <td style="text-align: left;">2p-4p</td>
+              <td style="text-align: left;">Leah, Addy, Ally, Danni</td>
+              <td style="text-align: left;">Colleen Scali</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <section class="u-clearfix u-container-align-center u-section-1" id="sec-69c9">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <h2 class="u-align-center u-text u-text-default u-text-1">Links </h2>
+      <h2 class="u-align-center u-text u-text-default u-text-1">Links</h2>
       <ul class="u-align-left u-text u-text-default u-text-2">
         <li>
           <a href="https://bsnteamsports.com/shop/UGWBsgRnvu"
@@ -163,358 +278,7 @@
                 class="u-align-center u-border-1 u-border-no-bottom u-border-no-top u-border-palette-5-base u-palette-1-light-1 u-table-cell u-table-cell-4">
                 Location</td>
             </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                January 20th</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                8:00-10:00 AM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                1st Day of Tryouts (Players)</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                January 21st</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                4:30-6:30 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                2nd Day of Tryouts (Players)</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                January 22nd</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                6:30 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Meet the Players (Parents & Players)</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                January 25th</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                Time Pending</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Team Pictures, Varsity Retreat, and potential field prep/clean-up</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                February 13-14</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">TBA
-              </td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Pre-Season</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                Canterbury</td>
-            </tr>
-            <tr style="height: 75px; background-color: pink;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                February 19</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                7:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7" style="background-color: pink;">
-                Sickles High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8" style="background-color: pink;">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                February 26</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                7:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Boca Ciega High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                February 28</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">TBA
-              </td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                <a href="files/MAIST_2025.pdf">Montverde Tournament (Click for Bracket)</a>
-              </td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                Montverde</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                March 4</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                7:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Largo High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                March 6</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                7:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Countryside High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                Countryside</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                March 7</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                6:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Berkley Prep</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                March 10</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                6:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Canterbury High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                Canterbury</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                March 11</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                6:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                River Ridge High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                River Ridge</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                March 12</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                7:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Northeast High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                Northeast</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                March 27</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                7:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Clearwater High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                Clearwater</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                March 29</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                12:00/2:30 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Cherry Hill (NJ), L. Brantley</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                Clermont</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                April 1</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                5:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Palm Harbor High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                Palm Harbor</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                April 2</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                7:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                St. Pete High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                April 8</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                7:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Tarpon Springs High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                April 9</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                7:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Dunedin High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                April 10</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                7:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Newsome High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>            
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                April 15</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                6:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Manatee High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                G.T. Bray Park</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                April 17</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                7:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Seminole High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                April 22</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                7:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Hollins High School</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                East Lake High School</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                April 24</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">TBA
-              </td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                PCAC Championship</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                South</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                April 25</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">
-                6:00 PM</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                Berkley Preparatory</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                Berkley Prep</td>
-            </tr>
-            <tr style="height: 75px;">
-              <td
-                class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell u-table-cell-5">
-                April 28-May 2</td>
-              <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-table-cell-6">TBA
-              </td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-7">
-                TBA</td>
-              <td
-                class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell u-white u-table-cell-8">
-                TBA</td>
-            </tr>
+            <!-- The rows will be dynamically inserted here by JavaScript -->
           </tbody>
         </table>
       </div>
