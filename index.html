@@ -64,10 +64,19 @@
     // Function to render the table
     const renderTable = () => {
       const tableBody = document.querySelector('.u-table-body');
+      const today = new Date();
+      const todayString = today.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+
       scheduleData.forEach(item => {
         const row = document.createElement('tr');
         row.style.height = '75px';
         const homeEmoji = item.location === 'East Lake High School' ? '🏠 ' : '';
+        
+        // Check if the date matches today's date
+        if (item.date.includes(todayString)) {
+          row.style.backgroundColor = '#ffffe0'; // Light yellow
+        }
+
         row.innerHTML = `
           <td class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell" style="font-weight: bold;">${homeEmoji}${item.date}</td>
           <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${item.time}</td>
