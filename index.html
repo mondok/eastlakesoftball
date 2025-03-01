@@ -82,10 +82,17 @@
           row.style.backgroundColor = '#ffffe0'; // Light yellow
         }
 
+        // Check if the event contains "High School" and create a link
+        let eventContent = item.event;
+        if (item.event.includes('High School')) {
+          const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(item.event + " softball maxpreps")}&btnI`;
+          eventContent = `<a href="${searchUrl}" target="_blank">${item.event}</a>`;
+        }
+
         row.innerHTML = `
           <td class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell" style="font-weight: bold;">${homeEmoji}${item.date}</td>
           <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${item.time}</td>
-          <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${item.event}</td>
+          <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${eventContent}</td>
           <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${item.location}</td>
         `;
         tableBody.appendChild(row);
