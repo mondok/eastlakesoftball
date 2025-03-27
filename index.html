@@ -27,138 +27,139 @@
 		"name": "eastlakesoftball",
 		"logo": "images/elsb.jpeg"
 }</script>
-<script type="application/javascript">
-  document.addEventListener('DOMContentLoaded', () => {
-    // Table data stored in JavaScript
-    const scheduleData = [
-      { date: 'January 20th', time: '8:00-10:00 AM', event: '1st Day of Tryouts (Players)', location: 'East Lake High School' },
-      { date: 'January 21st', time: '4:30-6:30 PM', event: '2nd Day of Tryouts (Players)', location: 'East Lake High School' },
-      { date: 'January 22nd', time: '6:30 PM', event: 'Meet the Players (Parents & Players)', location: 'East Lake High School' },
-      { date: 'January 25th', time: 'Time Pending', event: 'Team Pictures, Varsity Retreat, and potential field prep/clean-up', location: 'East Lake High School' },
-      { date: 'February 9th', time: '8am-4pm', event: 'Tag Day', location: 'Brooker Creek Publix' },
-      { date: 'February 12th', time: '5pm & 7pm', event: 'Pre-Season', location: 'Canterbury' },
-      { date: 'February 26', time: '7:00 PM', event: 'Sickles High School', location: 'East Lake High School' },      
-      { date: 'February 28', time: 'TBA', event: 'Montverde Tournament', location: 'Montverde' },
-      { date: 'March 1', time: 'TBA', event: 'Montverde Tournament', location: 'Montverde' },
-      { date: 'March 4', time: '7:00 PM', event: 'Largo High School', location: 'East Lake High School' },
-      { date: 'March 6', time: '7:00 PM', event: 'Countryside High School', location: 'Countryside' },
-      { date: 'March 7', time: '6:00 PM', event: 'Berkley Preparatory', location: 'East Lake High School' },
-      { date: 'March 10', time: '7:00 PM', event: 'Canterbury High School', location: 'Canterbury (transportation provided)' },
-      { date: 'March 11', time: '6:00 PM', event: 'River Ridge High School', location: 'River Ridge' },
-      { date: 'March 12', time: '7:00 PM', event: 'Northeast High School', location: 'Northeast (transportation provided)' },
-      { date: 'March 24', time: '6:00 PM', event: 'Boca Ciega High School', location: 'East Lake High School' },
-      { date: 'March 27', time: '7:00 PM', event: 'Clearwater High School', location: 'Clearwater' },
-      { date: 'March 29', time: '10:00 AM / 2:00 PM', event: 'Cherry Hill (NJ), Lake Brantley', location: 'Clermont/NTC (2350 Legends Way, Clermont, FL 34711)' },
-      { date: 'March 30th', time: '8am-4pm', event: 'Tag Day', location: 'Brooker Creek Publix' },
-      { date: 'April 1', time: '5:00 PM', event: 'Palm Harbor High School', location: 'Palm Harbor' },
-      { date: 'April 2', time: '7:00 PM', event: 'St. Pete High School', location: 'East Lake High School' },
-      { date: 'April 8', time: '7:00 PM', event: 'Tarpon Springs High School', location: 'East Lake High School' },
-      { date: 'April 9', time: '7:00 PM', event: 'Dunedin High School', location: 'East Lake High School' },
-      { date: 'April 10', time: '7:00 PM', event: 'Newsome High School', location: 'East Lake High School' },
-      { date: 'April 15', time: '6:00 PM', event: 'Manatee High School', location: 'G.T. Bray Park (transportation provided)' },
-      { date: 'April 17', time: '7:00 PM', event: 'Seminole High School', location: 'East Lake High School' },
-      { date: 'April 22', time: '7:00 PM', event: 'Hollins High School', location: 'East Lake High School' },
-      { date: 'April 24', time: 'TBA', event: 'PCAC Championship', location: 'South' },
-      { date: 'April 25', time: '6:00 PM', event: 'Berkley Preparatory', location: 'Berkley Prep' },
-      { date: 'April 28-May 2', time: 'TBA', event: 'TBA', location: 'TBA' }
-    ];
+  <script type="application/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+      // Table data stored in JavaScript
+      const scheduleData = [
+        { date: 'January 20th', time: '8:00-10:00 AM', event: '1st Day of Tryouts (Players)', location: 'East Lake High School' },
+        { date: 'January 21st', time: '4:30-6:30 PM', event: '2nd Day of Tryouts (Players)', location: 'East Lake High School' },
+        { date: 'January 22nd', time: '6:30 PM', event: 'Meet the Players (Parents & Players)', location: 'East Lake High School' },
+        { date: 'January 25th', time: 'Time Pending', event: 'Team Pictures, Varsity Retreat, and potential field prep/clean-up', location: 'East Lake High School' },
+        { date: 'February 9th', time: '8am-4pm', event: 'Tag Day', location: 'Brooker Creek Publix' },
+        { date: 'February 12th', time: '5pm & 7pm', event: 'Pre-Season', location: 'Canterbury' },
+        { date: 'February 26', time: '7:00 PM', event: 'Sickles High School', location: 'East Lake High School' },
+        { date: 'February 28', time: 'TBA', event: 'Montverde Tournament', location: 'Montverde' },
+        { date: 'March 1', time: 'TBA', event: 'Montverde Tournament', location: 'Montverde' },
+        { date: 'March 4', time: '7:00 PM', event: 'Largo High School', location: 'East Lake High School' },
+        { date: 'March 6', time: '7:00 PM', event: 'Countryside High School', location: 'Countryside' },
+        { date: 'March 7', time: '6:00 PM', event: 'Berkley Preparatory', location: 'East Lake High School' },
+        { date: 'March 10', time: '7:00 PM', event: 'Canterbury High School', location: 'Canterbury (transportation provided)' },
+        { date: 'March 11', time: '6:00 PM', event: 'River Ridge High School', location: 'River Ridge' },
+        { date: 'March 12', time: '7:00 PM', event: 'Northeast High School', location: 'Northeast (transportation provided)' },
+        { date: 'March 24', time: '6:00 PM', event: 'Boca Ciega High School', location: 'East Lake High School' },
+        { date: 'March 27', time: '7:00 PM', event: 'Clearwater High School', location: 'Clearwater' },
+        { date: 'March 29', time: '10:00 AM / 2:00 PM', event: 'Cherry Hill (NJ), Lake Brantley', location: 'Clermont/NTC (2350 Legends Way, Clermont, FL 34711)' },
+        { date: 'March 30th', time: '8am-4pm', event: 'Tag Day', location: 'Brooker Creek Publix' },
+        { date: 'April 1', time: '5:00 PM', event: 'Palm Harbor High School', location: 'Palm Harbor' },
+        { date: 'April 2', time: '7:00 PM', event: 'St. Pete High School', location: 'East Lake High School' },
+        { date: 'April 8', time: '7:00 PM', event: 'Tarpon Springs High School', location: 'East Lake High School' },
+        { date: 'April 9', time: '7:00 PM', event: 'Dunedin High School', location: 'East Lake High School' },
+        { date: 'April 10', time: '7:00 PM', event: 'Newsome High School', location: 'East Lake High School' },
+        { date: 'April 15', time: '6:00 PM', event: 'Manatee High School', location: 'G.T. Bray Park (transportation provided)' },
+        { date: 'April 17', time: '7:00 PM', event: 'Seminole High School', location: 'East Lake High School' },
+        { date: 'April 22', time: '7:00 PM', event: 'Hollins High School', location: 'East Lake High School' },
+        { date: 'April 24', time: 'TBA', event: 'PCAC Championship', location: 'South' },
+        { date: 'April 25', time: '6:00 PM', event: 'Berkley Preparatory', location: 'Berkley Prep' },
+        { date: 'April 28-May 2', time: 'TBA', event: 'TBA', location: 'TBA' }
+      ];
 
-    // Function to render the table
-    const renderTable = () => {
-      const tableBody = document.querySelector('.u-table-body');
-      const today = new Date();
-      const todayString = today.toLocaleDateString('en-US', { 
-        month: 'long', 
-        day: 'numeric'
-      }).replace(/(\d+)(st|nd|rd|th)/, '$1'); 
+      // Function to render the table
+      const renderTable = () => {
+        const tableBody = document.querySelector('.u-table-body');
+        const today = new Date();
+        const todayString = today.toLocaleDateString('en-US', {
+          month: 'long',
+          day: 'numeric'
+        }).replace(/(\d+)(st|nd|rd|th)/, '$1');
 
-      scheduleData.forEach(item => {
-        const row = document.createElement('tr');
-        row.style.height = '75px';
-        const homeEmoji = item.location === 'East Lake High School' ? '🏠 ' : '';
-        const itemDate = item.date.replace(/(\d+)(st|nd|rd|th)/, '$1');
+        scheduleData.forEach(item => {
+          const row = document.createElement('tr');
+          row.style.height = '75px';
+          const homeEmoji = item.location === 'East Lake High School' ? '🏠 ' : '';
+          const itemDate = item.date.replace(/(\d+)(st|nd|rd|th)/, '$1');
 
-        // Check if the date matches today's date
-        if (itemDate === todayString) {          
-          row.style.backgroundColor = '#ffffe0'; // Light yellow
-        }
+          // Check if the date matches today's date
+          if (itemDate === todayString) {
+            row.style.backgroundColor = '#ffffe0'; // Light yellow
+          }
 
-        // Check if the event contains "High School" and create a link
-        let eventContent = item.event;
-        if (item.event.includes('High School') || item.event.includes('Preparatory')) {
-          const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(item.event + " softball maxpreps")}&btnI`;
-          eventContent = `<a href="${searchUrl}" target="_blank">${item.event}</a>`;
-        }
+          // Check if the event contains "High School" and create a link
+          let eventContent = item.event;
+          if (item.event.includes('High School') || item.event.includes('Preparatory')) {
+            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(item.event + " softball maxpreps")}&btnI`;
+            eventContent = `<a href="${searchUrl}" target="_blank">${item.event}</a>`;
+          }
 
-        row.innerHTML = `
+          row.innerHTML = `
           <td class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell" style="font-weight: bold;">${homeEmoji}${item.date}</td>
           <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${item.time}</td>
           <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${eventContent}</td>
           <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${item.location}</td>
         `;
-        tableBody.appendChild(row);
-      });
-    };
+          tableBody.appendChild(row);
+        });
+      };
 
-    // Call the function to render the table
-    renderTable();
+      // Call the function to render the table
+      renderTable();
 
-    // Select all rows in the table
-    const rows = document.querySelectorAll('tr');
+      // Select all rows in the table
+      const rows = document.querySelectorAll('tr');
 
-    rows.forEach(row => {
+      rows.forEach(row => {
         // Select the last cell (location) in the row
         const locationCell = row.querySelector('td:last-child');
 
         if (locationCell && locationCell.textContent.includes('East Lake High School')) {
-            // Apply bold styling
-            locationCell.style.fontWeight = 'bold';
+          // Apply bold styling
+          locationCell.style.fontWeight = 'bold';
         }
-    });
+      });
 
-    rows.forEach(row => {
+      rows.forEach(row => {
         // Select the first cell (date column) in the row
         const dateCell = row.querySelector('td:first-child');
 
         if (dateCell) {
-            // Extract the text content of the date cell
-            const dateText = dateCell.textContent.trim();
+          // Extract the text content of the date cell
+          const dateText = dateCell.textContent.trim();
 
-            // Try to parse the date using a recognizable format
-            const match = dateText.match(/([A-Za-z]+)\s(\d+)(?:th|st|nd|rd)?/); // Match month and day
-            if (match) {
-                const [_, month, day] = match;
-                const dateString = `${month} ${day}, ${new Date().getFullYear()}`; // Add the current year
-                const date = new Date(dateString);
+          // Try to parse the date using a recognizable format
+          const match = dateText.match(/([A-Za-z]+)\s(\d+)(?:th|st|nd|rd)?/); // Match month and day
+          if (match) {
+            const [_, month, day] = match;
+            const dateString = `${month} ${day}, ${new Date().getFullYear()}`; // Add the current year
+            const date = new Date(dateString);
 
-                // If the date is valid, append the day of the week
-                if (!isNaN(date.getTime())) {
-                    const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
-                    dateCell.textContent = `${dateText} (${dayOfWeek})`;
-                }
+            // If the date is valid, append the day of the week
+            if (!isNaN(date.getTime())) {
+              const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
+              dateCell.textContent = `${dateText} (${dayOfWeek})`;
             }
+          }
         }
-    });    
-});
-</script>
+      });
+    });
+  </script>
   <meta name="theme-color" content="#478ac9">
   <meta property="og:title" content="East Lake Softball Boosters - Home">
-  <meta property="og:description" content="East Lake High School Softball, located in Tarpon Springs, Florida, is known for its competitive spirit and consistent success, regularly competing against top teams in the region. Led by experienced coaches, the program emphasizes excellence both on and off the field, fostering skill development and teamwork.">
+  <meta property="og:description"
+    content="East Lake High School Softball, located in Tarpon Springs, Florida, is known for its competitive spirit and consistent success, regularly competing against top teams in the region. Led by experienced coaches, the program emphasizes excellence both on and off the field, fostering skill development and teamwork.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://eastlakesoftball.com/elsb_tile.png">
   <meta data-intl-tel-input-cdn-path="intlTelInput/">
   <style>
     /* Add this CSS to style alternating table rows */
     .u-table-body tr:nth-child(odd) {
-      background-color: #f0f8ff; /* Very light blue */
+      background-color: #f0f8ff;
+      /* Very light blue */
     }
 
     /* Style for the Tag Day Shifts table */
     .tag-day-table tbody tr:nth-child(odd) {
-      background-color: #f0f8ff; /* Very light blue */
+      background-color: #f0f8ff;
+      /* Very light blue */
     }
-
-
   </style>
 </head>
 
@@ -179,10 +180,18 @@
       <h2 class="u-align-center u-text u-text-default u-text-1">Updates</h2>
       <ul class="u-align-left u-text u-text-default u-text-2">
         <!-- <li>2/14: <a href="files/strikeoutcancer.pdf">Strikeout Cancer Luminary forms</a> are due. You can turn in forms/money to a board member, or put in an envelope and have your player drop in the booster correspondence bin located in the club house.</li> -->
-         <li>Please complete <a href="https://ksaevents.my.salesforce-sites.com/waiver">this waiver form</a> for the Cherry Hill and Lake Brantley games on March 29.   Use the KSA code 25SB99807.</li>
-        <li><strong>3/29 Games</strong>:  The address is 2350 Legends Way, Clermont, FL 34711 (NTC Complex).  Game times are 10am and 2pm.  Player warmups begin at 8:45am.  Lunch will be provided for the players for the March 29th games in Clermont.  Here is the <a href='https://tourneymachine.com/Public/Results/Team.aspx?IDTournament=h202409262057446240c56c1232e3847&IDDivision=h20241009164643961d104397c186a4b&IDTeam=h20241009180121368ea9338b6614f46'>Tourney Machine link</a>.</li>
-        <li>Pre-Game Meals: Thank you for signing up, we still need to fill the 4/17 game, link to sign-up is <a href="https://www.signupgenius.com/go/4090D45A8AC2EA7FD0-54461067-pregame#/">here</a>.</li>
+        <li>Please complete <a href="https://ksaevents.my.salesforce-sites.com/waiver">this waiver form</a> for the
+          Cherry Hill and Lake Brantley games on March 29. Use the KSA code 25SB99807.</li>
+        <li><strong>3/29 Games</strong>: The address is 2350 Legends Way, Clermont, FL 34711 (NTC Complex). Game times
+          are 10am and 2pm. Player warmups begin at 8:45am. Lunch will be provided for the players for the March 29th
+          games in Clermont. Here is the <a
+            href='https://tourneymachine.com/Public/Results/Team.aspx?IDTournament=h202409262057446240c56c1232e3847&IDDivision=h20241009164643961d104397c186a4b&IDTeam=h20241009180121368ea9338b6614f46'>Tourney
+            Machine link</a>.</li>
+        <li>Pre-Game Meals: Thank you for signing up, we still need to fill the 4/17 game, link to sign-up is <a
+            href="https://www.signupgenius.com/go/4090D45A8AC2EA7FD0-54461067-pregame#/">here</a>.</li>
         <li><strong>Transportation will be provided to the 4/15 game at Manatee.</strong></li>
+        <li><strong>April 17th will be senior night AND staff appreciation night.</strong>  The events will start at 6:30pm with first pitch at 7pm.
+        </li>
       </ul>
     </div>
   </section>
@@ -201,7 +210,8 @@
         </li>         -->
         <li>
           <a href="https://www.signupgenius.com/go/4090D45A8AC2EA7FD0-54461067-pregame#/"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-3">Pregame Meal Signup Link</a>          
+            class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-3">Pregame
+            Meal Signup Link</a>
         </li>
         <!-- <li>
           <a href="files/strikeoutcancer.pdf"
@@ -209,17 +219,19 @@
         </li>    -->
         <li>
           <a href="files/sponsorship.pdf"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-3">2025 Sponsorship Details</a>
-        </li>                
+            class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-3">2025
+            Sponsorship Details</a>
+        </li>
         <li>
           <a href="files/reimbursement.pdf"
             class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-3">Reimbursement
             Form</a>
-        </li>                
+        </li>
         <li>
           <a href="http://web.gc.com/teams/ElDMLW03I91c/live"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">GameChanger (Spring 2025)</a>
-        </li>        
+            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">GameChanger
+            (Spring 2025)</a>
+        </li>
         <li>
           <a href="https://x.com/elhs_softball"
             class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">Twitter/X</a>
@@ -227,7 +239,7 @@
         <li>
           <a href="https://www.facebook.com/EastLakeSoftball/"
             class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">Facebook</a>
-        </li>        
+        </li>
         <li>
           <a href="https://www.maxpreps.com/fl/tarpon-springs/east-lake-eagles/softball/"
             class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-5">MaxPreps</a>
@@ -236,15 +248,16 @@
           <a href="https://athleticclearance.fhsaahome.org/home"
             class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-4">Athletic
             Clearance Site</a>
-        </li>        
+        </li>
         <li>
           <a href="https://www.pcsb.org/Page/12334"
             class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-6">Volunteering</a>
         </li>
         <li>
           <a href="files/determinationletter.pdf"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-6">501c(3) Letter of Determination</a>
-        </li>        
+            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-6">501c(3)
+            Letter of Determination</a>
+        </li>
       </ul>
     </div>
   </section>
