@@ -133,7 +133,7 @@
           const match = dateText.match(/([A-Za-z]+)\s(\d+)(?:th|st|nd|rd)?/); // Match month and day
           if (match) {
             const [_, month, day] = match;
-            const dateString = `${month} ${day}, ${new Date().getFullYear()}`; // Add the current year
+            const dateString = `${month} ${day}, 2026`; // Add the year 2026
             const date = new Date(dateString);
 
             // If the date is valid, append the day of the week
