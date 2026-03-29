@@ -29,51 +29,34 @@
 }</script>
   <script type="application/javascript">
     document.addEventListener('DOMContentLoaded', () => {
-      // Table data stored in JavaScript
-      const scheduleData = [
-        { date: 'February 17', time: '7:00 PM', event: 'River Ridge High School', location: 'East Lake High School' },
-        { date: 'February 18', time: '6:00 PM', event: 'Lake Brantley High School', location: 'East Lake High School' },
-        { date: 'February 23', time: '7:00 PM (Strike-Out Cancer)', event: 'Sickles High School', location: 'East Lake High School' },
-        { date: 'February 26', time: '7:00 PM', event: 'Largo High School', location: 'Largo High School' },
-        { date: 'March 4', time: '7:00 PM', event: 'Hollins High School', location: 'Hollins High School' },
-        { date: 'March 6', time: '2:00 PM', event: 'Fivay High School', location: 'Brooksville, FL' },
-        { date: 'March 6', time: '7:00 PM', event: 'Cardinal Mooney High School', location: 'Brooksville, FL' },
-        { date: 'March 7', time: 'TBA', event: 'Leopard Slam', location: 'Brooksville, FL' },
-        { date: 'March 10', time: '7:00 PM', event: 'Palm Harbor High School', location: 'East Lake High School' },
-        { date: 'March 12', time: '7:00 PM', event: 'Dunedin High School', location: 'Dunedin High School' },
-        { date: 'March 24', time: '7:00 PM', event: 'Osceola High School', location: 'Osceola High School' },
-        { date: 'March 25', time: '6:00 PM', event: 'Berkeley Prep High School', location: 'East Lake High School' },
-        { date: 'March 27', time: '5:30 PM', event: 'South Sumter High School', location: 'Ocala, FL (Field 5 - Ocala Regional Sportsplex at 3500 SW 67th Ave.)' },
-        { date: 'March 27', time: '7:30 PM', event: 'Westminster Christian High School', location: 'Ocala, FL (Field 4 - Ocala Regional Sportsplex at 3500 SW 67th Ave.)' },
-        { date: 'March 28', time: '3:30 PM', event: 'Trinity Catholic High School', location: 'Ocala, FL (Field 2 - Ocala Regional Sportsplex at 3500 SW 67th Ave.)' },
-        { date: 'March 28', time: '5:30 PM', event: 'Spruce Creek High School', location: 'Ocala, FL (Field 3 - Ocala Regional Sportsplex at 3500 SW 67th Ave.)' },        
-        { date: 'March 31', time: '7:00 PM', event: 'Clearwater High School', location: 'East Lake High School' },
-        { date: 'April 2', time: '6:00 PM', event: 'Berkeley Prep High School', location: 'Berkeley Prep High School' },
-        { date: 'April 6', time: '7:00 PM', event: 'Hernando High School', location: 'East Lake High School' },
-        { date: 'April 7', time: '7:00 PM', event: 'Seminole High School', location: 'Seminole High School' },
-        { date: 'April 8', time: '7:00 PM (Senior Night/Meet the Teacher)', event: 'CCC High School', location: 'East Lake High School' },
-        { date: 'April 14', time: '7:00 PM', event: 'Northeast High School', location: 'East Lake High School' },
-        { date: 'April 15', time: '7:00 PM', event: 'Tarpon Springs High School', location: 'East Lake High School' },
-        { date: 'April 20', time: '7:00 PM', event: 'Newsome High School', location: 'East Lake High School' },
-        { date: 'April 21', time: '7:00 PM', event: 'PCAC Championship Div A', location: 'Eddie C or Highest' },
-        { date: 'April 27', time: '7:00 PM', event: 'DISTRICTS', location: 'HIGHEST SEED' },
-        { date: 'April 28', time: '7:00 PM', event: 'DISTRICTS', location: 'HIGHEST SEED' },
-        { date: 'April 29', time: '7:00 PM', event: 'DISTRICT CHAMPIONSHIP', location: 'HIGHEST SEED' },
-        { date: 'April 30', time: '7:00 PM', event: 'DISTRICT CHAMPIONSHIP', location: 'HIGHEST SEED' },
-        { date: 'May 4', time: '6:00 PM', event: 'Banquet', location: 'Crescent Oaks Country Club' },
-        { date: 'May 6', time: '7:00 PM', event: 'REGIONAL QUARTERFINALS', location: 'TBA' },
-        { date: 'May 7', time: '7:00 PM', event: 'REGIONAL QUARTERFINALS', location: 'TBA' },
-        { date: 'May 12', time: '7:00 PM', event: 'REGIONAL SEMIFINAL', location: 'TBA' },
-        { date: 'May 14', time: '7:00 PM', event: 'REGIONAL FINAL', location: 'TBA' },
-        { date: 'May 15', time: '7:00 PM', event: 'REGIONAL FINAL', location: 'TBA' },
-        { date: 'May 20', time: 'TBA', event: 'STATES', location: 'Clermont, FL' },
-        { date: 'May 21', time: 'TBA', event: 'STATES', location: 'Clermont, FL' },
-        { date: 'May 22', time: 'TBA', event: 'STATES', location: 'Clermont, FL' },
-        { date: 'May 23', time: 'TBA', event: 'STATES', location: 'Clermont, FL' },
-      ];
+      fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+          renderUpdates(data.updates);
+          renderLinks(data.links);
+          renderSchedule(data.schedule);
+          postProcessSchedule();
+        });
 
-      // Function to render the table
-      const renderTable = () => {
+      const renderUpdates = (updates) => {
+        const list = document.getElementById('updates-list');
+        updates.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = item.text;
+          list.appendChild(li);
+        });
+      };
+
+      const renderLinks = (links) => {
+        const list = document.getElementById('links-list');
+        links.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${item.url}" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base">${item.label}</a>`;
+          list.appendChild(li);
+        });
+      };
+
+      const renderSchedule = (scheduleData) => {
         const tableBody = document.querySelector('.u-table-body');
         const today = new Date();
         const todayString = today.toLocaleDateString('en-US', {
@@ -109,45 +92,44 @@
         });
       };
 
-      // Call the function to render the table
-      renderTable();
+      const postProcessSchedule = () => {
+        // Select all rows in the table
+        const rows = document.querySelectorAll('tr');
 
-      // Select all rows in the table
-      const rows = document.querySelectorAll('tr');
+        rows.forEach(row => {
+          // Select the last cell (location) in the row
+          const locationCell = row.querySelector('td:last-child');
 
-      rows.forEach(row => {
-        // Select the last cell (location) in the row
-        const locationCell = row.querySelector('td:last-child');
+          if (locationCell && locationCell.textContent.includes('East Lake High School')) {
+            // Apply bold styling
+            locationCell.style.fontWeight = 'bold';
+          }
+        });
 
-        if (locationCell && locationCell.textContent.includes('East Lake High School')) {
-          // Apply bold styling
-          locationCell.style.fontWeight = 'bold';
-        }
-      });
+        rows.forEach(row => {
+          // Select the first cell (date column) in the row
+          const dateCell = row.querySelector('td:first-child');
 
-      rows.forEach(row => {
-        // Select the first cell (date column) in the row
-        const dateCell = row.querySelector('td:first-child');
+          if (dateCell) {
+            // Extract the text content of the date cell
+            const dateText = dateCell.textContent.trim();
 
-        if (dateCell) {
-          // Extract the text content of the date cell
-          const dateText = dateCell.textContent.trim();
+            // Try to parse the date using a recognizable format
+            const match = dateText.match(/([A-Za-z]+)\s(\d+)(?:th|st|nd|rd)?/); // Match month and day
+            if (match) {
+              const [_, month, day] = match;
+              const dateString = `${month} ${day}, 2026`; // Add the year 2026
+              const date = new Date(dateString);
 
-          // Try to parse the date using a recognizable format
-          const match = dateText.match(/([A-Za-z]+)\s(\d+)(?:th|st|nd|rd)?/); // Match month and day
-          if (match) {
-            const [_, month, day] = match;
-            const dateString = `${month} ${day}, 2026`; // Add the year 2026
-            const date = new Date(dateString);
-
-            // If the date is valid, append the day of the week
-            if (!isNaN(date.getTime())) {
-              const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
-              dateCell.textContent = `${dateText} (${dayOfWeek})`;
+              // If the date is valid, append the day of the week
+              if (!isNaN(date.getTime())) {
+                const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
+                dateCell.textContent = `${dateText} (${dayOfWeek})`;
+              }
             }
           }
-        }
-      });
+        });
+      };
     });
   </script>
   <meta name="theme-color" content="#478ac9">
@@ -183,100 +165,19 @@
     </div>
   </header>
 
-  <!-- New Updates Section -->
+  <!-- Updates Section (populated from data.json) -->
   <section class="u-clearfix u-container-align-center u-section-1" style="background-color: #e3f4fc; padding: 20px;">
     <div class="u-clearfix u-sheet u-sheet-1">
       <h2 class="u-align-center u-text u-text-default u-text-1">Updates</h2>
-      <ul class="u-align-left u-text u-text-default u-text-2">
-        <li>Doc4Life <a href="https://www.leaguelineup.com/welcome.asp?url=doc4life">tournament info</a></li>
-        <li>Doc-4-Life gate fee:  Gate admission is $20 daily or $30 for a two-day pass, available only via GoFan.co</li>
-        <li><strong>Youth Leadership Pinellas (YLP)</strong> — Applications are open for the 2026-2027 class! YLP is a 6-month leadership program for Pinellas County high school sophomores, juniors, and seniors (current freshmen, sophomores, and juniors can apply). Students explore topics like local government, criminal justice, environment, and more while meeting community leaders. <strong>Deadline: May 1, 2026.</strong> <a href="https://leadershippinellas.com/YLP-Apply">Apply here</a> | <a href="https://leadershippinellas.com/Youth-Leadership-Pinellas">Learn more</a></li>
-      </ul>
+      <ul id="updates-list" class="u-align-left u-text u-text-default u-text-2"></ul>
     </div>
   </section>
 
+  <!-- Links Section (populated from data.json) -->
   <section class="u-clearfix u-container-align-center u-section-1" id="sec-69c9">
     <div class="u-clearfix u-sheet u-sheet-1">
       <h2 class="u-align-center u-text u-text-default u-text-1">Links</h2>
-      <ul class="u-align-left u-text u-text-default u-text-2">
-        <li>
-          <a href="https://photos.google.com/share/AF1QipM2L-jx5yjvS_1NtiiiPx75mouEBi0MQl9dc5RZOw_ZxiQVSrHnR04iscacKpgK5g?key=NE9ySTBXMTZDTlhPM18zMVFIenF2RVFQZXNvV0dB"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3">2026 SOC Pictures Part 1</a>
-        </li>          
-        <li>
-          <a href="https://photos.app.goo.gl/3DrDhi12rQudHwFH8"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3">2026 SOC Pictures Part 2</a>
-        </li>             
-        <li>
-          <a href="https://photos.app.goo.gl/1M8kZ7cpxcj89WK69"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3">2026 Pictures from Media Day</a>
-        </li>        
-        <li>
-          <a href="https://bsnteamsports.com/shop/Q9XARJQtAb"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3">2026 Spirit Wear</a>
-        </li>
-       <li>
-          <a href="https://www.hilton.com/en/hotels/ocfswhx-hampton-suites-ocala/?WT.mc_id=zAL0WW1MB2OLE3ResConf4MO1086x_ResConf__Aug5Header_HotelName_6MULTIBR7EN8i82621&mi_u=1609089058"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">(For Parents) Doc-4-Life Hotel Booking</a>
-        </li>        
-        <!-- <li>
-          <a href="files/bluecrue2026.pdf"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-3">Blue Crue 2026 Signup Form</a>
-        </li>         -->
-        <li>
-          <a href="https://www.signupgenius.com/go/4090848AFA923A4F58-58159333-concession#/"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3">Concession Signup</a>
-        </li>
-        <li>
-          <a href="https://www.signupgenius.com/go/4090848AFA923A4F58-58158912-pregame#/"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3">Pregame Meal Signup</a>
-        </li>
-        <!-- <li>
-          <a href="files/strikeoutcancer.pdf"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-3">Strike Out Cancer Luminary Form</a>
-        </li>    -->
-        <li>
-          <a href="files/sponsorship.pdf"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-3">2026
-            Sponsorship Details</a>
-        </li>
-        <li>
-          <a href="files/reimbursement.pdf"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-file-link u-hover-none u-none u-text-palette-1-base u-btn-3">Reimbursement
-            Form</a>
-        </li>
-        <!-- <li>
-          <a href="http://web.gc.com/teams/ElDMLW03I91c/live"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">GameChanger
-            (Spring 2025)</a>
-        </li> -->
-        <li>
-          <a href="https://x.com/elhs_softball"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">Twitter/X</a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/EastLakeSoftball/"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">Facebook</a>
-        </li>
-        <li>
-          <a href="https://www.maxpreps.com/fl/tarpon-springs/east-lake-eagles/softball/"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-5">MaxPreps</a>
-        </li>
-        <li>
-          <a href="https://athleticclearance.fhsaahome.org/home"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-4">Athletic
-            Clearance Site</a>
-        </li>
-        <li>
-          <a href="https://www.pcsb.org/Page/12334"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-6">Volunteering</a>
-        </li>
-        <li>
-          <a href="files/determinationletter.pdf"
-            class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-6">501c(3)
-            Letter of Determination</a>
-        </li>
-      </ul>
+      <ul id="links-list" class="u-align-left u-text u-text-default u-text-2"></ul>
     </div>
   </section>
   <section class="u-align-left u-clearfix u-container-align-center u-container-align-left u-section-2"
