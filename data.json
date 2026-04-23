@@ -1,6 +1,9 @@
 {
   "updates": [
     {
+      "text": "<a href='https://www.maxpreps.com/m/tournament/view.aspx?bracketid=69d33c5e-3b72-416c-af8c-4a22bd8bef12&ssid=a19da845-3212-4153-9dab-40532876c917&tournamentid=7debc320-8b89-4d19-9c18-8009300fc129&apptype=1&appplatform=ios&brandplatformid=maxpreps_app_ios&adobe_mc=TS%3D1776960431|MCMID%3D31776619073962340422486710363831670154|MCAID%3D2EFC1A008515FD7E-60000869D8018354|MCORGID%3D10D31225525FF5790A490D4D@AdobeOrg'>District Tournament Bracket</a>"
+    },
+    {
       "text": "<strong>Nike Softball Camp at East Lake High School</strong> — July 6-9, 2026. Half-Day Camp (ages 6-8, 9am-12pm) and Day Camp (ages 8-14, 9am-3pm), Mon-Thu. Check-in begins 30 min before start; lunch is not provided. <a href=\"https://www.ussportscamps.com/softball/nike/softball-camp-east-lake-high-school\">Register here</a>"
     },
     {
@@ -108,9 +111,7 @@
     { "date": "April 20", "time": "7:00 PM", "event": "Newsome High School", "location": "East Lake High School" },
     { "date": "April 21", "time": "7:00 PM", "event": "Palm Harbor High School", "location": "Eddie C Moore, Field 5" },
     { "date": "April 27", "time": "7:00 PM", "event": "Largo High School", "location": "East Lake High School" },
-    { "date": "April 28", "time": "7:00 PM", "event": "DISTRICTS", "location": "HIGHEST SEED" },
     { "date": "April 29", "time": "7:00 PM", "event": "DISTRICT CHAMPIONSHIP", "location": "HIGHEST SEED" },
-    { "date": "April 30", "time": "7:00 PM", "event": "DISTRICT CHAMPIONSHIP", "location": "HIGHEST SEED" },
     { "date": "May 4", "time": "6:00 PM", "event": "Banquet", "location": "Crescent Oaks Country Club" },
     { "date": "May 6", "time": "7:00 PM", "event": "REGIONAL QUARTERFINALS", "location": "TBA" },
     { "date": "May 7", "time": "7:00 PM", "event": "REGIONAL QUARTERFINALS", "location": "TBA" },
