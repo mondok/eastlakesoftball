@@ -113,14 +113,9 @@
     { "date": "April 27", "time": "7:00 PM", "event": "Largo High School", "location": "East Lake High School" },
     { "date": "April 29", "time": "7:00 PM", "event": "Mitchell High School", "location": "East Lake High School" },
     { "date": "May 4", "time": "6:00 PM", "event": "Banquet", "location": "Crescent Oaks Country Club" },
-    { "date": "May 6", "time": "7:00 PM", "event": "REGIONAL QUARTERFINALS", "location": "TBA" },
-    { "date": "May 7", "time": "7:00 PM", "event": "REGIONAL QUARTERFINALS", "location": "TBA" },
+    { "date": "May 7", "time": "7:00 PM", "event": "REGIONAL QUARTERFINALS", "location": "Plant High School" },
     { "date": "May 12", "time": "7:00 PM", "event": "REGIONAL SEMIFINAL", "location": "TBA" },
     { "date": "May 14", "time": "7:00 PM", "event": "REGIONAL FINAL", "location": "TBA" },
-    { "date": "May 15", "time": "7:00 PM", "event": "REGIONAL FINAL", "location": "TBA" },
     { "date": "May 20", "time": "TBA", "event": "STATES", "location": "Clermont, FL" },
-    { "date": "May 21", "time": "TBA", "event": "STATES", "location": "Clermont, FL" },
-    { "date": "May 22", "time": "TBA", "event": "STATES", "location": "Clermont, FL" },
-    { "date": "May 23", "time": "TBA", "event": "STATES", "location": "Clermont, FL" }
   ]
 }
