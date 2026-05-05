@@ -116,6 +116,6 @@
     { "date": "May 7", "time": "7:00 PM", "event": "REGIONAL QUARTERFINALS", "location": "Plant High School" },
     { "date": "May 12", "time": "7:00 PM", "event": "REGIONAL SEMIFINAL", "location": "TBA" },
     { "date": "May 14", "time": "7:00 PM", "event": "REGIONAL FINAL", "location": "TBA" },
-    { "date": "May 20", "time": "TBA", "event": "STATES", "location": "Clermont, FL" },
+    { "date": "May 20", "time": "TBA", "event": "STATES", "location": "Clermont, FL" }
   ]
 }
