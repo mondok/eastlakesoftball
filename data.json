@@ -1,13 +1,7 @@
 {
   "updates": [
     {
-      "text": "<a href='https://www.maxpreps.com/m/tournament/view.aspx?bracketid=69d33c5e-3b72-416c-af8c-4a22bd8bef12&ssid=a19da845-3212-4153-9dab-40532876c917&tournamentid=7debc320-8b89-4d19-9c18-8009300fc129&apptype=1&appplatform=ios&brandplatformid=maxpreps_app_ios&adobe_mc=TS%3D1776960431|MCMID%3D31776619073962340422486710363831670154|MCAID%3D2EFC1A008515FD7E-60000869D8018354|MCORGID%3D10D31225525FF5790A490D4D@AdobeOrg'>District Tournament Bracket</a>"
-    },
-    {
       "text": "<strong>Nike Softball Camp at East Lake High School</strong> — July 6-9, 2026. Half-Day Camp (ages 6-8, 9am-12pm) and Day Camp (ages 8-14, 9am-3pm), Mon-Thu. Check-in begins 30 min before start; lunch is not provided. <a href=\"https://www.ussportscamps.com/softball/nike/softball-camp-east-lake-high-school\">Register here</a>"
-    },
-    {
-      "text": "<strong>Youth Leadership Pinellas (YLP)</strong> — Applications are open for the 2026-2027 class! YLP is a 6-month leadership program for Pinellas County high school sophomores, juniors, and seniors (current freshmen, sophomores, and juniors can apply). Students explore topics like local government, criminal justice, environment, and more while meeting community leaders. <strong>Deadline: May 1, 2026.</strong> <a href=\"https://leadershippinellas.com/YLP-Apply\">Apply here</a> | <a href=\"https://leadershippinellas.com/Youth-Leadership-Pinellas\">Learn more</a>"
     }
   ],
   "links": [
@@ -42,22 +36,6 @@
     {
       "url": "https://bsnteamsports.com/shop/Q9XARJQtAb",
       "label": "2026 Spirit Wear"
-    },
-    {
-      "url": "https://www.signupgenius.com/go/4090848AFA923A4F58-58159333-concession#/",
-      "label": "Concession Signup"
-    },
-    {
-      "url": "https://www.signupgenius.com/go/4090848AFA923A4F58-58158912-pregame#/",
-      "label": "Pregame Meal Signup"
-    },
-    {
-      "url": "files/sponsorship.pdf",
-      "label": "2026 Sponsorship Details"
-    },
-    {
-      "url": "files/reimbursement.pdf",
-      "label": "Reimbursement Form"
     },
     {
       "url": "https://x.com/elhs_softball",
@@ -114,8 +92,6 @@
     { "date": "April 29", "time": "7:00 PM", "event": "Mitchell High School", "location": "East Lake High School" },
     { "date": "May 4", "time": "6:00 PM", "event": "Banquet", "location": "Crescent Oaks Country Club" },
     { "date": "May 7", "time": "7:00 PM", "event": "Plant High School", "location": "Plant High School" },
-    { "date": "May 13", "time": "7:00 PM", "event": "Land O' Lakes High School", "location": "Land O' Lakes High School" },
-    { "date": "May 14", "time": "7:00 PM", "event": "REGIONAL FINAL", "location": "TBA" },
-    { "date": "May 20", "time": "TBA", "event": "STATES", "location": "Clermont, FL" }
+    { "date": "May 13", "time": "7:00 PM", "event": "Land O' Lakes High School", "location": "Land O' Lakes High School" }
   ]
 }
