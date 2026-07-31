@@ -1,38 +1,7 @@
 {
   "updates": [
-    {
-      "text": "<strong>Nike Softball Camp at East Lake High School</strong> — July 6-9, 2026. Half-Day Camp (ages 6-8, 9am-12pm) and Day Camp (ages 8-14, 9am-3pm), Mon-Thu. Check-in begins 30 min before start; lunch is not provided. <a href=\"https://www.ussportscamps.com/softball/nike/softball-camp-east-lake-high-school\">Register here</a>"
-    }
   ],
   "links": [
-    {
-      "url": "https://photos.google.com/share/AF1QipMgdS3LVkVpPXYHMwF-rDi8SbOP2sHt8_jgR7r-iv7r6vdWD_1dLZhXCwtXR5e-8g?key=SG82anhmcDFqdW00Qmp2QkJCZ0g0T2MwTzVfczlR",
-      "label": "Senior Night 2026 Pictures Part 1"
-    },
-    {
-      "url": "https://photos.app.goo.gl/yqfPMo3AZFdD9VzZ8",
-      "label": "Senior Night 2026 Pictures Part 2"
-    },  
-    {
-      "url": "https://photos.app.goo.gl/944Dd8PLHcnfDLu66",
-      "label": "Senior Night 2026 Pictures Part 3"
-    },          
-    {
-      "url": "https://photos.google.com/share/AF1QipM2L-jx5yjvS_1NtiiiPx75mouEBi0MQl9dc5RZOw_ZxiQVSrHnR04iscacKpgK5g?key=NE9ySTBXMTZDTlhPM18zMVFIenF2RVFQZXNvV0dB",
-      "label": "2026 SOC Pictures Part 1"
-    },
-    {
-      "url": "https://photos.app.goo.gl/3DrDhi12rQudHwFH8",
-      "label": "2026 SOC Pictures Part 2"
-    },
-    {
-      "url": "https://photos.app.goo.gl/1M8kZ7cpxcj89WK69",
-      "label": "2026 Pictures from Media Day"
-    },
-    {
-      "url": "https://photos.google.com/share/AF1QipORqdYsc27ZQlquTmPW7Owxr_KFrE28A-IBbKx2rgGLixZeW9N4DjbVKgHi1tCzqQ?key=d3F6TVdVMDhaTHdMTDU2bWx5R1Z1UEFCbVcyNjh3",
-      "label": "2026 Action Shots"
-    },    
     {
       "url": "https://bsnteamsports.com/shop/Q9XARJQtAb",
       "label": "2026 Spirit Wear"
@@ -63,35 +32,41 @@
     }
   ],
   "schedule": [
-    { "date": "February 17", "time": "7:00 PM", "event": "River Ridge High School", "location": "East Lake High School" },
-    { "date": "February 18", "time": "6:00 PM", "event": "Lake Brantley High School", "location": "East Lake High School" },
-    { "date": "February 23", "time": "7:00 PM (Strike-Out Cancer)", "event": "Sickles High School", "location": "East Lake High School" },
-    { "date": "February 26", "time": "7:00 PM", "event": "Largo High School", "location": "Largo High School" },
-    { "date": "March 4", "time": "7:00 PM", "event": "Hollins High School", "location": "Hollins High School" },
-    { "date": "March 6", "time": "2:00 PM", "event": "Fivay High School", "location": "Brooksville, FL" },
-    { "date": "March 6", "time": "7:00 PM", "event": "Cardinal Mooney High School", "location": "Brooksville, FL" },
-    { "date": "March 7", "time": "TBA", "event": "Leopard Slam", "location": "Brooksville, FL" },
-    { "date": "March 10", "time": "7:00 PM", "event": "Palm Harbor High School", "location": "East Lake High School" },
-    { "date": "March 12", "time": "7:00 PM", "event": "Dunedin High School", "location": "Dunedin High School" },
-    { "date": "March 24", "time": "7:00 PM", "event": "Osceola High School", "location": "Osceola High School" },
-    { "date": "March 25", "time": "6:00 PM", "event": "Berkeley Prep High School", "location": "East Lake High School" },
-    { "date": "March 27", "time": "5:30 PM", "event": "South Sumter High School", "location": "Ocala, FL" },
-    { "date": "March 27", "time": "7:30 PM", "event": "Westminster Christian High School", "location": "Ocala, FL" },
-    { "date": "March 28", "time": "3:30 PM", "event": "Trinity Catholic High School", "location": "Ocala, FL" },
-    { "date": "March 28", "time": "5:30 PM", "event": "Spruce Creek High School", "location": "Ocala, FL" },
-    { "date": "March 31", "time": "7:00 PM", "event": "Clearwater High School", "location": "East Lake High School" },
-    { "date": "April 2", "time": "6:00 PM", "event": "Berkeley Prep High School", "location": "Berkeley Prep High School" },
-    { "date": "April 6", "time": "7:00 PM", "event": "Hernando High School", "location": "East Lake High School" },
-    { "date": "April 8", "time": "7:00 PM (Senior Night/Meet the Teacher)", "event": "CCC High School", "location": "East Lake High School" },
-    { "date": "April 14", "time": "7:00 PM", "event": "Northeast High School", "location": "East Lake High School" },
-    { "date": "April 15", "time": "7:00 PM", "event": "Tarpon Springs High School", "location": "East Lake High School" },
-    { "date": "April 16", "time": "7:00 PM", "event": "Seminole High School", "location": "Seminole High School" },    
-    { "date": "April 20", "time": "7:00 PM", "event": "Newsome High School", "location": "East Lake High School" },
-    { "date": "April 21", "time": "7:00 PM", "event": "Palm Harbor High School", "location": "Eddie C Moore, Field 5" },
-    { "date": "April 27", "time": "7:00 PM", "event": "Largo High School", "location": "East Lake High School" },
-    { "date": "April 29", "time": "7:00 PM", "event": "Mitchell High School", "location": "East Lake High School" },
-    { "date": "May 4", "time": "6:00 PM", "event": "Banquet", "location": "Crescent Oaks Country Club" },
-    { "date": "May 7", "time": "7:00 PM", "event": "Plant High School", "location": "Plant High School" },
-    { "date": "May 13", "time": "7:00 PM", "event": "Land O' Lakes High School", "location": "Land O' Lakes High School" }
+    { "date": "August 11", "time": "7:00 AM", "event": "First Day of School", "location": "East Lake High School" },
+
+  ],
+  "archive": [
+     {
+      "url": "https://photos.google.com/share/AF1QipMgdS3LVkVpPXYHMwF-rDi8SbOP2sHt8_jgR7r-iv7r6vdWD_1dLZhXCwtXR5e-8g?key=SG82anhmcDFqdW00Qmp2QkJCZ0g0T2MwTzVfczlR",
+      "label": "Senior Night 2026 Pictures Part 1"
+    },
+    {
+      "url": "https://photos.app.goo.gl/yqfPMo3AZFdD9VzZ8",
+      "label": "Senior Night 2026 Pictures Part 2"
+    },  
+    {
+      "url": "https://photos.app.goo.gl/944Dd8PLHcnfDLu66",
+      "label": "Senior Night 2026 Pictures Part 3"
+    },          
+    {
+      "url": "https://photos.google.com/share/AF1QipM2L-jx5yjvS_1NtiiiPx75mouEBi0MQl9dc5RZOw_ZxiQVSrHnR04iscacKpgK5g?key=NE9ySTBXMTZDTlhPM18zMVFIenF2RVFQZXNvV0dB",
+      "label": "2026 SOC Pictures Part 1"
+    },
+    {
+      "url": "https://photos.app.goo.gl/3DrDhi12rQudHwFH8",
+      "label": "2026 SOC Pictures Part 2"
+    },
+    {
+      "url": "https://photos.app.goo.gl/1M8kZ7cpxcj89WK69",
+      "label": "2026 Pictures from Media Day"
+    },
+    {
+      "url": "https://photos.google.com/share/AF1QipORqdYsc27ZQlquTmPW7Owxr_KFrE28A-IBbKx2rgGLixZeW9N4DjbVKgHi1tCzqQ?key=d3F6TVdVMDhaTHdMTDU2bWx5R1Z1UEFCbVcyNjh3",
+      "label": "2026 Action Shots"
+    },    
+    {
+      "url": "https://bsnteamsports.com/shop/Q9XARJQtAb",
+      "label": "2026 Spirit Wear"
+    }
   ]
 }
