@@ -4,11 +4,11 @@ Website for East Lake High School Softball Boosters, hosted on GitHub Pages.
 
 ## How to Update the Site
 
-All site content is managed through **`data.json`**. Edit that file and push to GitHub — the site updates automatically.
+All site content is managed through **`data.js`**. Edit that file and push to GitHub — the site updates automatically.
 
 ### Updates
 
-The `updates` array contains announcements shown at the top of the page. Each item has a `text` field that supports HTML.
+The `updates` array contains announcements shown at the top of the page. Each item has a `text` field that supports HTML. The Updates section is hidden automatically when the array is empty.
 
 ```json
 {
@@ -58,10 +58,4 @@ The `schedule` array populates the game schedule table. Each item has `date`, `t
 
 ## Local Development
 
-To preview the site locally:
-
-```bash
-python3 -m http.server 8080
-```
-
-Then open http://localhost:8080 in your browser. Opening `index.html` directly as a file will not work because the browser blocks `fetch()` on `file://` URLs.
+Just open `index.html` in your browser — no server needed.

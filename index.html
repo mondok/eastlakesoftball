@@ -1,44 +1,47 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en">
+<html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="East Lake Softball">
-  <meta name="description" content="">
+  <meta name="description"
+    content="East Lake High School Softball Boosters — schedule, updates, and links for East Lake Eagles softball in Tarpon Springs, Florida.">
   <title>ELSB Boosters</title>
-  <link rel="stylesheet" href="nicepage.css" media="screen">
-  <link rel="stylesheet" href="index.css" media="screen">
-  <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-  <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-  <meta name="generator" content="Nicepage 7.2.3, nicepage.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="index.css">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
 
+  <meta name="theme-color" content="#1b3a6b">
+  <meta property="og:title" content="East Lake Softball Boosters - Home">
+  <meta property="og:description"
+    content="East Lake High School Softball, located in Tarpon Springs, Florida, is known for its competitive spirit and consistent success, regularly competing against top teams in the region. Led by experienced coaches, the program emphasizes excellence both on and off the field, fostering skill development and teamwork.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://eastlakesoftball.com/elsb_tile.png">
 
-  <link id="u-theme-google-font" rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "eastlakesoftball",
-		"logo": "images/elsb.jpg"
-}</script>
-  <script type="application/javascript">
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "eastlakesoftball",
+    "logo": "images/elsb.jpg"
+  }</script>
+
+  <script src="data.js"></script>
+  <script>
     document.addEventListener('DOMContentLoaded', () => {
-      fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-          renderUpdates(data.updates);
-          renderLinks(data.links);
-          renderSchedule(data.schedule);
-          postProcessSchedule();
-        });
 
       const renderUpdates = (updates) => {
+        if (!updates || updates.length === 0) {
+          document.getElementById('updates-section').hidden = true;
+          return;
+        }
         const list = document.getElementById('updates-list');
         updates.forEach(item => {
           const li = document.createElement('li');
@@ -51,172 +54,117 @@
         const list = document.getElementById('links-list');
         links.forEach(item => {
           const li = document.createElement('li');
-          li.innerHTML = `<a href="${item.url}" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base">${item.label}</a>`;
+          li.innerHTML = `<a href="${item.url}">${item.label}</a>`;
           list.appendChild(li);
         });
       };
 
       const renderSchedule = (scheduleData) => {
-        const tableBody = document.querySelector('.u-table-body');
+        const tableBody = document.getElementById('schedule-body');
         const today = new Date();
         const todayString = today.toLocaleDateString('en-US', {
           month: 'long',
           day: 'numeric'
-        }).replace(/(\d+)(st|nd|rd|th)/, '$1');
+        });
 
         scheduleData.forEach(item => {
           const row = document.createElement('tr');
-          row.style.height = '75px';
-          const homeEmoji = item.location === 'East Lake High School' ? '🏠 ' : '';
+          const isHome = item.location === 'East Lake High School';
+          const homeEmoji = isHome ? '🏠 ' : '';
           const itemDate = item.date.replace(/(\d+)(st|nd|rd|th)/, '$1');
 
-          // Check if the date matches today's date
           if (itemDate === todayString) {
-            row.style.backgroundColor = '#ffffe0'; // Light yellow
+            row.classList.add('today');
           }
 
-          // Check if the event contains "High School" and create a link
+          // Append day of the week when the date parses (season year: 2026)
+          let dateText = item.date;
+          const match = itemDate.match(/([A-Za-z]+)\s(\d+)/);
+          if (match) {
+            const date = new Date(`${match[1]} ${match[2]}, 2026`);
+            if (!isNaN(date.getTime())) {
+              const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
+              dateText = `${item.date} (${dayOfWeek})`;
+            }
+          }
+
+          // Opponent schools link to MaxPreps
           let eventContent = item.event;
           if (item.event.includes('High School') || item.event.includes('Preparatory')) {
             const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(item.event + " softball maxpreps")}&btnI`;
-            eventContent = `<a href="${searchUrl}" target="_blank">${item.event}</a>`;
+            eventContent = `<a href="${searchUrl}" target="_blank" rel="noopener">${item.event}</a>`;
           }
 
           row.innerHTML = `
-          <td class="u-align-left u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-first-column u-table-cell" style="font-weight: bold;">${homeEmoji}${item.date}</td>
-          <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${item.time}</td>
-          <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${eventContent}</td>
-          <td class="u-border-1 u-border-grey-75 u-border-no-bottom u-border-no-top u-table-cell">${item.location}</td>
-        `;
+            <td data-label="Date" class="cell-date">${homeEmoji}${dateText}</td>
+            <td data-label="Time" class="cell-time">${item.time}</td>
+            <td data-label="Event" class="cell-event">${eventContent}</td>
+            <td data-label="Location" class="cell-location${isHome ? ' home' : ''}">${item.location}</td>
+          `;
           tableBody.appendChild(row);
         });
       };
 
-      const postProcessSchedule = () => {
-        // Select all rows in the table
-        const rows = document.querySelectorAll('tr');
-
-        rows.forEach(row => {
-          // Select the last cell (location) in the row
-          const locationCell = row.querySelector('td:last-child');
-
-          if (locationCell && locationCell.textContent.includes('East Lake High School')) {
-            // Apply bold styling
-            locationCell.style.fontWeight = 'bold';
-          }
-        });
-
-        rows.forEach(row => {
-          // Select the first cell (date column) in the row
-          const dateCell = row.querySelector('td:first-child');
-
-          if (dateCell) {
-            // Extract the text content of the date cell
-            const dateText = dateCell.textContent.trim();
-
-            // Try to parse the date using a recognizable format
-            const match = dateText.match(/([A-Za-z]+)\s(\d+)(?:th|st|nd|rd)?/); // Match month and day
-            if (match) {
-              const [_, month, day] = match;
-              const dateString = `${month} ${day}, 2026`; // Add the year 2026
-              const date = new Date(dateString);
-
-              // If the date is valid, append the day of the week
-              if (!isNaN(date.getTime())) {
-                const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
-                dateCell.textContent = `${dateText} (${dayOfWeek})`;
-              }
-            }
-          }
-        });
-      };
+      const data = window.siteData;
+      renderUpdates(data.updates);
+      renderLinks(data.links);
+      renderSchedule(data.schedule);
     });
   </script>
-  <meta name="theme-color" content="#478ac9">
-  <meta property="og:title" content="East Lake Softball Boosters - Home">
-  <meta property="og:description"
-    content="East Lake High School Softball, located in Tarpon Springs, Florida, is known for its competitive spirit and consistent success, regularly competing against top teams in the region. Led by experienced coaches, the program emphasizes excellence both on and off the field, fostering skill development and teamwork.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://eastlakesoftball.com/elsb_tile.png">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/">
-  <style>
-    /* Add this CSS to style alternating table rows */
-    .u-table-body tr:nth-child(odd) {
-      background-color: #f0f8ff;
-      /* Very light blue */
-    }
-
-    /* Style for the Tag Day Shifts table */
-    .tag-day-table tbody tr:nth-child(odd) {
-      background-color: #f0f8ff;
-      /* Very light blue */
-    }
-  </style>
 </head>
 
-<body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false"
-  class="u-body u-stick-footer u-xl-mode" data-lang="en">
-  <header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-484f">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <a href="/" class="u-image u-logo u-image-1" data-image-width="203" data-image-height="172">
-        <img src="images/elsb.png" class="u-logo-image u-logo-image-1">
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo-link">
+        <img src="images/elsb.png" alt="East Lake Eagles logo" class="logo">
       </a>
-      <h1 class="u-text u-text-default u-text-1">East Lake Softball Boosters</h1>
+      <div class="header-text">
+        <h1>East Lake Softball Boosters</h1>
+        <p class="tagline">East Lake Eagles &middot; Tarpon Springs, FL</p>
+      </div>
     </div>
   </header>
 
-  <!-- Updates Section (populated from data.json) -->
-  <section class="u-clearfix u-container-align-center u-section-1" style="background-color: #e3f4fc; padding: 20px;">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <h2 class="u-align-center u-text u-text-default u-text-1">Updates</h2>
-      <ul id="updates-list" class="u-align-left u-text u-text-default u-text-2"></ul>
-    </div>
-  </section>
-
-  <!-- Links Section (populated from data.json) -->
-  <section class="u-clearfix u-container-align-center u-section-1" id="sec-69c9">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <h2 class="u-align-center u-text u-text-default u-text-1">Links</h2>
-      <ul id="links-list" class="u-align-left u-text u-text-default u-text-2"></ul>
-    </div>
-  </section>
-  <section class="u-align-left u-clearfix u-container-align-center u-container-align-left u-section-2"
-    id="carousel_f0f4">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <h2 class="u-align-center u-text u-text-default u-text-1">2026 Schedule</h2>
-      <div class="u-expanded-width u-table u-table-responsive u-table-1">
-        <table class="u-table-entity">
-          <colgroup>
-            <col width="29.9%">
-            <col width="21.3%">
-            <col width="23.800000000000004%">
-            <col width="24.900000000000006%">
-          </colgroup>
-          <tbody class="u-align-center u-table-body">
-            <tr style="height: 74px;">
-              <td
-                class="u-align-left u-border-1 u-border-no-bottom u-border-no-top u-border-palette-5-base u-first-column u-palette-1-light-1 u-table-cell u-table-cell-1">
-                Date</td>
-              <td
-                class="u-align-center u-border-1 u-border-no-bottom u-border-no-top u-border-palette-5-base u-palette-1-light-1 u-table-cell u-table-cell-2">
-                Time </td>
-              <td
-                class="u-align-center u-border-1 u-border-no-bottom u-border-no-top u-border-palette-5-base u-palette-1-light-1 u-table-cell u-table-cell-3">
-                Event</td>
-              <td
-                class="u-align-center u-border-1 u-border-no-bottom u-border-no-top u-border-palette-5-base u-palette-1-light-1 u-table-cell u-table-cell-4">
-                Location</td>
-            </tr>
-            <!-- The rows will be dynamically inserted here by JavaScript -->
-          </tbody>
-        </table>
+  <main>
+    <section id="updates-section" class="section section-updates">
+      <div class="container">
+        <h2>Updates</h2>
+        <ul id="updates-list" class="updates-list"></ul>
       </div>
-    </div>
-  </section>
-  <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="sec-b3a2">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <p class="u-small-text u-text u-text-variant u-text-1">Copyright 2025 East Lake Softball Boosters Inc.<br>
-        1300 Silver Eagle Dr<br>Tarpon Springs, FL 34688<br />
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Links</h2>
+        <ul id="links-list" class="links-grid"></ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>2026 Schedule</h2>
+        <div class="schedule-wrap">
+          <table class="schedule">
+            <thead>
+              <tr>
+                <th class="cell-date">Date</th>
+                <th class="cell-time">Time</th>
+                <th class="cell-event">Event</th>
+                <th class="cell-location">Location</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Copyright 2025 East Lake Softball Boosters Inc.<br>
+        1300 Silver Eagle Dr<br>Tarpon Springs, FL 34688<br>
         East Lake Softball Boosters Inc. is a registered 501c(3); EIN: 86-1173822</p>
     </div>
   </footer>

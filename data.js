@@ -1,4 +1,4 @@
-{
+window.siteData = {
   "updates": [
   ],
   "links": [
@@ -32,8 +32,7 @@
     }
   ],
   "schedule": [
-    { "date": "August 11", "time": "7:00 AM", "event": "First Day of School", "location": "East Lake High School" },
-
+    { "date": "August 11", "time": "7:00 AM", "event": "First Day of School", "location": "East Lake High School" }
   ],
   "archive": [
      {
@@ -43,11 +42,11 @@
     {
       "url": "https://photos.app.goo.gl/yqfPMo3AZFdD9VzZ8",
       "label": "Senior Night 2026 Pictures Part 2"
-    },  
+    },
     {
       "url": "https://photos.app.goo.gl/944Dd8PLHcnfDLu66",
       "label": "Senior Night 2026 Pictures Part 3"
-    },          
+    },
     {
       "url": "https://photos.google.com/share/AF1QipM2L-jx5yjvS_1NtiiiPx75mouEBi0MQl9dc5RZOw_ZxiQVSrHnR04iscacKpgK5g?key=NE9ySTBXMTZDTlhPM18zMVFIenF2RVFQZXNvV0dB",
       "label": "2026 SOC Pictures Part 1"
@@ -63,10 +62,10 @@
     {
       "url": "https://photos.google.com/share/AF1QipORqdYsc27ZQlquTmPW7Owxr_KFrE28A-IBbKx2rgGLixZeW9N4DjbVKgHi1tCzqQ?key=d3F6TVdVMDhaTHdMTDU2bWx5R1Z1UEFCbVcyNjh3",
       "label": "2026 Action Shots"
-    },    
+    },
     {
       "url": "https://bsnteamsports.com/shop/Q9XARJQtAb",
       "label": "2026 Spirit Wear"
     }
   ]
-}
+};
